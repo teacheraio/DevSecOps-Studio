@@ -18,8 +18,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box_check_update = false
 
   # Iterate through entries in YAML file
-  machines.each do |machine|
-    config.vm.define machine["name"] do |box|
+#  machines.each do |machine|
+  N=3
+  (1..N).each do |machine|
+  config.vm.define machine["name"] do |box|
       box.vm.box = machine["box"]
       box.vm.hostname = machine["name"]
       box.vm.network "private_network", ip: machine["ip"]
