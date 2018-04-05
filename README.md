@@ -112,6 +112,15 @@ brew install ansible
 ```
 
 ### Linux
+
+Install with curl(run as root)
+
+``` bash
+curl -O https://raw.githubusercontent.com/raghuone/DevSecOps-Studio/master/setup/Linux_DevSecOps_Setup.sh && chmod +x Linux_DevSecOps_Setup.sh && ./Linux_DevSecOps_Setup.sh;
+```
+
+or 
+
 Install dependencies using apt-get
 
 [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
