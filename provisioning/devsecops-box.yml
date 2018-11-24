@@ -8,26 +8,14 @@
 
   vars:
     ansible_user: 'vagrant'
-    # Docker Community Edition
-    docker_edition: 'ce'
-    docker_package: "docker-{{ docker_edition }}"
-    docker_package_state: "present"
-
-    # Docker compose
-    docker_install_compose: true
-    docker_compose_version: "1.16.1"
-    docker_compose_path: /usr/local/bin/docker-compose
-
-    docker_apt_release_channel: stable
-    docker_apt_repository: "deb https://download.docker.com/linux/{{ ansible_distribution|lower }} {{ ansible_distribution_release }} {{ docker_apt_release_channel }}"
 
     # Packer
-    packer_version: "1.1.0"
+    packer_version: "1.3.2"
     packer_arch: "amd64"
     packer_bin_path: /usr/local/bin
 
     # Terraform
-    terraform_version: "0.10.8"
+    terraform_version: "0.11.10"
     terraform_arch: "amd64"
     terraform_bin_path: /usr/local/bin
 
