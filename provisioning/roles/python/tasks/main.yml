@@ -1,10 +1,12 @@
 ---
 
 - name: Install base packages
-  apt: 
-    name=['build-essential', 'git', 'python-pip', 'python-virtualenv'] 
-    update_cache=yes
-    state=present
+  apt: name={{ item }} update_cache=yes state=present
+  with_items:
+    - build-essential
+    - git
+    - python-pip
+    - python-virtualenv
 
 - name: Upgrade pip
   pip:
