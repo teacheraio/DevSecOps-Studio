@@ -21,9 +21,9 @@ provisioner:
   lint:
     name: ansible-lint
     enabled: True
-    #options:
-    #  excludes:
-    #    - roles/rvm_io.ruby/tasks/rvm.yml
+    options:
+      exclude:
+        - roles/rvm_io.ruby/tasks/rvm.yml
 scenario:
   name: prod
 verifier:

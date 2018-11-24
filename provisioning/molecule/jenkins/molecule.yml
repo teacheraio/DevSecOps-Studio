@@ -23,7 +23,7 @@ provisioner:
     name: ansible-lint
     enabled: True
     options:
-      excludes:
+      exclude:
         - roles/rvm_io.ruby/tasks/rvm.yml
         - roles/geerlingguy.jenkins/tasks/main.yml
         - roles/geerlingguy.jenkins/tasks/settings.yml

@@ -22,7 +22,7 @@ provisioner:
     name: ansible-lint
     enabled: True
     options:
-      excludes:
+      exclude:
         - roles/geerlingguy.nginx/tasks/
 scenario:
   name: elk
