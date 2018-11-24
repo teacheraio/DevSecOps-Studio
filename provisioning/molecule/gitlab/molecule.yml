@@ -10,15 +10,13 @@ lint:
     config-file: resources/.yamllint
 platforms:
   - name: instance
-    image: geerlingguy/docker-ubuntu1604-ansible:latest
+    image: "geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu1604}-ansible:latest"
+    command: ${MOLECULE_DOCKER_COMMAND:-""}
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+    pre_build_image: true
     hostname: "gitlab.local"
-    privileged: True
-    command: "/lib/systemd/systemd"
-    tty: "yes"
-    volumes: 
-        - /sys/fs/cgroup:/sys/fs/cgroup:ro
-    env:
-        TERM: xterm 
 provisioner:
   name: ansible
   playbooks:
