@@ -42,6 +42,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         	vb.gui = false
         end # end of gui
 
+        vb.customize ["modifyvm", :id, "--groups", "/DevSecOps-Studio"]
+
       end # end of vb provider
     end # end of box
   end # end of machines loop

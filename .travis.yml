@@ -28,8 +28,7 @@ before_install:
   - ssh-keygen -f id_rsa -t rsa -b 4096 -C "your_email@example.com" -N ''
 
 install:
-  - pip install docker-py
-  - pip install molecule==2.19 # Molecule Installs Ansible
+  - pip install docker molecule==2.19 # Molecule Installs Ansible
 
 script:
   - cd provisioning && molecule $DEBUG test -s $test

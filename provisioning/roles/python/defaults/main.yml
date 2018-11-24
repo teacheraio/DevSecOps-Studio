@@ -1,0 +1,3 @@
+---
+# Edition can be one of: 'ce' (Community Edition) or 'ee' (Enterprise Edition).
+version: '18.1'
