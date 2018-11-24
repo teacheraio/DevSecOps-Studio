@@ -8,13 +8,10 @@
     - nikto
     - nmap
     - sqlmap
-    - python-pip
-    - python-virtualenv
 
 - name: Install tools via pip
   pip:
-    name: "{{ item }}"
+    name:
+      - sslyze
+      - ansible
     state: present
-  with_items:
-    - sslyze
-    - ansible

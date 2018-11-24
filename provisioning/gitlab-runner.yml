@@ -15,24 +15,6 @@
     rvm1_user: 'root'
     rvm1_install_path: '/usr/local/rvm'
 
-    # Docker settings for runner
-    docker_edition: 'ce'
-    docker_package: "docker-{{ docker_edition }}"
-    docker_package_state: "present"
-
-    # Docker compose
-    docker_install_compose: true
-    docker_compose_version: "1.16.1"
-    docker_compose_path: /usr/local/bin/docker-compose
-
-    docker_apt_release_channel: stable
-    docker_apt_repository: "deb https://download.docker.com/linux/{{ ansible_distribution|lower }} {{ ansible_distribution_release }} {{ docker_apt_release_channel }}"
-
-    # Packer
-    packer_version: "1.1.0"
-    packer_arch: "amd64"
-    packer_bin_path: /usr/local/bin
-
     # host entries won't work in docker
     # see https://stackoverflow.com/questions/28327458/how-to-add-my-containers-hostname-to-etc-hosts
     add_host_entries: true
@@ -44,6 +26,7 @@
     - geerlingguy.docker
     - gitlab-runner
     - geerlingguy.ansible-role-packer
+    - python
     - cli-tools
   tags:
     - runner
