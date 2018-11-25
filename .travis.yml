@@ -23,13 +23,6 @@ env:
   - MOLECULE_DISTRO=ubuntu1604 test=elk
   - MOLECULE_DISTRO=ubuntu1604 test=prod
 
-  - MOLECULE_DISTRO=debian9 test=devsecops
-  - MOLECULE_DISTRO=debian9 test=jenkins
-  - MOLECULE_DISTRO=debian9 test=gitlab
-  - MOLECULE_DISTRO=debian9 test=gitlab-runner
-  - MOLECULE_DISTRO=debian9 test=elk
-  - MOLECULE_DISTRO=debian9 test=prod
-
 services:
   - docker
 
