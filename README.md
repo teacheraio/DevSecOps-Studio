@@ -55,11 +55,17 @@ $ ansible-galaxy install -r requirements.yml -p provisioning/roles
 # Setup the environment, takes an hour or less based on your internet speed.
 $ vagrant up
 ```
+
+
 Go grab some coffee while DevSecOps Studio does its job.
 
 Yes, that's it, you just setup entire DevSecOps environment with three commands :)
 
+
 Go ahead and read Practical DevSecOps Lessons on the [wiki](https://github.com/teacheraio/DevSecOps-Studio/wiki)
+
+### Installation video
+[![asciicast](https://asciinema.org/a/LGCa3te9yXhVLDCRpL2TtxzHa.svg)](https://asciinema.org/a/LGCa3te9yXhVLDCRpL2TtxzHa)
 
 ### Details
 
