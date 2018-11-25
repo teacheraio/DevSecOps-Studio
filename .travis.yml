@@ -9,18 +9,26 @@ before_cache:
   - rm -f $HOME/.cache/pip/log/debug.log
 
 env:
-  - test=devsecops
-  - test=jenkins
-  - test=gitlab
-  - test=gitlab-runner
-  - test=elk
-  - test=prod
-  matrix:
-    - MOLECULE_DISTRO=ubuntu1804
-    - MOLECULE_DISTRO=ubuntu1604
-    - MOLECULE_DISTRO=ubuntu1404
-    - MOLECULE_DISTRO=debian9
+  - MOLECULE_DISTRO=ubuntu1804 test=devsecops
+  - MOLECULE_DISTRO=ubuntu1804 test=jenkins
+  - MOLECULE_DISTRO=ubuntu1804 test=gitlab
+  - MOLECULE_DISTRO=ubuntu1804 test=gitlab-runner
+  - MOLECULE_DISTRO=ubuntu1804 test=elk
+  - MOLECULE_DISTRO=ubuntu1804 test=prod
 
+  - MOLECULE_DISTRO=ubuntu1604 test=devsecops
+  - MOLECULE_DISTRO=ubuntu1604 test=jenkins
+  - MOLECULE_DISTRO=ubuntu1604 test=gitlab
+  - MOLECULE_DISTRO=ubuntu1604 test=gitlab-runner
+  - MOLECULE_DISTRO=ubuntu1604 test=elk
+  - MOLECULE_DISTRO=ubuntu1604 test=prod
+
+  - MOLECULE_DISTRO=debian9 test=devsecops
+  - MOLECULE_DISTRO=debian9 test=jenkins
+  - MOLECULE_DISTRO=debian9 test=gitlab
+  - MOLECULE_DISTRO=debian9 test=gitlab-runner
+  - MOLECULE_DISTRO=debian9 test=elk
+  - MOLECULE_DISTRO=debian9 test=prod
 
 services:
   - docker
@@ -41,4 +49,6 @@ script:
 
 matrix:
   allow_failures:
-    - env: test=gitlab # Docker has some issue with gitlab reconfigure, works fine in VM
+    - env: MOLECULE_DISTRO=ubuntu1804 test=gitlab
+    - env: MOLECULE_DISTRO=ubuntu1604 test=gitlab
+    - env: MOLECULE_DISTRO=debian9 test=gitlab
