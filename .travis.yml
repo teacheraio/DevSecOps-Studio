@@ -18,8 +18,6 @@ env:
   matrix:
     - MOLECULE_DISTRO: ubuntu1804
     - MOLECULE_DISTRO: ubuntu1604
-    - MOLECULE_DISTRO: ubuntu1404
-    - MOLECULE_DISTRO: debian9
 
 services:
   - docker
