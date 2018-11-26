@@ -13,12 +13,13 @@
 
 # Install GitLab and its dependencies.
 - name: Install GitLab dependencies.
-  package: name={{ item }} state=present
-  with_items:
-    - openssh-server
-    - postfix
-    - curl
-    - openssl
+  package:
+    name:
+      - openssh-server
+      - postfix
+      - curl
+      - openssl
+    state: present
 
 - name: Download GitLab repository installation script.
   get_url:

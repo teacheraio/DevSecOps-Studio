@@ -1,14 +1,13 @@
 ---
 - name: Install curl, locales and apt-transport-https
   apt:
-    name: "{{ item }}"
+    name:
+      - curl
+      - locales
+      - apt-transport-https
+      - sshpass
     state: present
     update_cache: yes
-  with_items:
-    - curl
-    - locales
-    - apt-transport-https
-    - sshpass
 
 - name: Configure Locale as en_US.UTF-8
   locale_gen:

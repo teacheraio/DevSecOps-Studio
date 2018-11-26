@@ -25,12 +25,11 @@
 
 - name: Install GitLab Runner dependencies
   apt:
-    name: '{{ item }}'
+    name:
+      - debian-archive-keyring
+      - apt-transport-https
+      - ca-certificates
     state: present
-  with_items:
-    - debian-archive-keyring
-    - apt-transport-https
-    - ca-certificates
 
 - name: Install GitLab Runner
   apt:

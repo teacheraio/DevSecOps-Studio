@@ -2,12 +2,11 @@
 
 - name: Install Security Tools
   apt:
-    name: '{{ item }}'
+    name:
+      - nikto
+      - nmap
+      - sqlmap
     state: present
-  with_items:
-    - nikto
-    - nmap
-    - sqlmap
 
 - name: Install tools via pip
   pip:

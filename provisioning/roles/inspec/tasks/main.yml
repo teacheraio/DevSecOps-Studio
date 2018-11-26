@@ -2,11 +2,10 @@
 
 - name: Install inspec dependencies
   apt:
-    name: "{{item}}"
+    name:
+      - gcc
+      - make
     state: present
-  with_items:
-    - gcc
-    - make
 
 - name: Install Inspec
   gem:

@@ -2,12 +2,11 @@
 
 - name: Install awscli, awsebcli, ansible, ansible-lint
   pip:
-    name: "{{ item }}"
-  with_items:
-    - awscli
-    - awsebcli
-    - ansible
-    - ansible-lint
+    name:
+      - awscli
+      - awsebcli
+      - ansible
+      - ansible-lint
 
 - name: Install tree package
   apt:
