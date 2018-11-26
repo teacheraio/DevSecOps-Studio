@@ -2,7 +2,7 @@
 dependencies: []
 
 galaxy_info:
-  author: secfigo 
+  author: secfigo
   description: "Terraform for Linux"
   company: "Teachera Community"
   license: "license (MIT)"
@@ -29,5 +29,5 @@ galaxy_info:
     - droplet
     - packaging
     - build
-    - terraform 
-    - hashicorp 
+    - terraform
+    - hashicorp
