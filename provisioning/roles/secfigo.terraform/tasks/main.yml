@@ -1,9 +1,8 @@
 ---
-
-- name: Make sure unzip is installed
+- name: Make sure unzip is installed 
   package: name=unzip state=present
 
-- name: Download and Install Terraform
+- name: Download and Install Terraform 
   unarchive:
     src: https://releases.hashicorp.com/terraform/{{ terraform_version }}/terraform_{{ terraform_version }}_linux_{{ terraform_arch }}.zip
     dest: "{{ terraform_bin_path }}"

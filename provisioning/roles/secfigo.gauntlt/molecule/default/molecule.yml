@@ -18,7 +18,7 @@ provisioner:
   lint:
     name: ansible-lint
     options:
-      excludes:
+      exclude:
         - ../rvm_io.ruby/tasks/rvm.yml
 scenario:
   name: default

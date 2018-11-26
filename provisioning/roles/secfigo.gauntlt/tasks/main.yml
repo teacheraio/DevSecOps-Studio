@@ -2,12 +2,11 @@
 
 - name: Install gauntlt dependencies
   apt:
-    name: "{{item}}"
+    name:
+      - build-essential
+      - gcc
+      - make
     state: present
-  with_items:
-    - build-essential
-    - gcc
-    - make
 
 - name: Install Gauntlt
   gem:
