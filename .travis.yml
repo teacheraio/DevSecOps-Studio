@@ -37,7 +37,7 @@ before_install:
 install:
   - pip install docker molecule==2.19 # Molecule Installs Ansible
 
-after_install:
+before_script:
   - ansible --version
   - molecule --version
   - docker --version
