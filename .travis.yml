@@ -9,12 +9,12 @@ before_cache:
   - rm -f $HOME/.cache/pip/log/debug.log
 
 env:
-  - MOLECULE_DISTRO=ubuntu1804 test=devsecops
-  - MOLECULE_DISTRO=ubuntu1804 test=jenkins
-  - MOLECULE_DISTRO=ubuntu1804 test=gitlab
-  - MOLECULE_DISTRO=ubuntu1804 test=gitlab-runner
-  - MOLECULE_DISTRO=ubuntu1804 test=elk
-  - MOLECULE_DISTRO=ubuntu1804 test=prod
+  # - MOLECULE_DISTRO=ubuntu1804 test=devsecops
+  # - MOLECULE_DISTRO=ubuntu1804 test=jenkins
+  # - MOLECULE_DISTRO=ubuntu1804 test=gitlab
+  # - MOLECULE_DISTRO=ubuntu1804 test=gitlab-runner
+  # - MOLECULE_DISTRO=ubuntu1804 test=elk
+  # - MOLECULE_DISTRO=ubuntu1804 test=prod
 
   - MOLECULE_DISTRO=ubuntu1604 test=devsecops
   - MOLECULE_DISTRO=ubuntu1604 test=jenkins
