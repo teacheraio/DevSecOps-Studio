@@ -9,6 +9,7 @@
     state: present
     update_cache: yes
 
+# See https://www.pixelflush.com/blog/2013/03/29/fix-locale-setting-on-ubuntu-ec2-instances/
 - name: Configure Locale as en_US.UTF-8
   locale_gen:
     name: en_US.UTF-8

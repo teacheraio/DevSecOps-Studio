@@ -3,9 +3,6 @@
 - name: Setup production environment
   hosts: all
   become: true
-  become_user: root
-  remote_user: root
-  vars:
 
   roles:
     - common

@@ -3,8 +3,7 @@
 - name: Install ELK stack
   hosts: all
   become: yes
-  become_user: root
-  remote_user: root
+
   vars:
     - elasticsearch_network_host: localhost
 

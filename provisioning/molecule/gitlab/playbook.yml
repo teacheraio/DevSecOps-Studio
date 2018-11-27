@@ -3,8 +3,6 @@
 - name: Configure gitlab on ubuntu server
   hosts: all
   become: true
-  become_user: root
-  remote_user: root
 
   vars:
     gitlab_restart_handler_failed_when: false

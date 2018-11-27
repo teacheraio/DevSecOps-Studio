@@ -1,13 +1,20 @@
 ---
 
 - name: Install Docker, Docker Compose, Ansible, Packer and Terraform
+  gather_facts: False
   hosts: all
-  become: true
-  become_user: root
-  remote_user: vagrant
-  vars:
-    ansible_user: 'vagrant'
+  become: yes
 
+  pre_tasks:
+  - name: install python 2
+    raw: test -e /usr/bin/python || (apt-get -y update && apt-get install -y python-minimal)
+  - name: Run setup again for gather facts
+    setup:
+  - name: Fix hash mismatch error
+    apt:
+       update_cache: yes
+       
+  vars:
     # Inspec
     ruby_version: 'ruby-2.3.1'
     rvm1_rubies: ['{{ ruby_version }}']

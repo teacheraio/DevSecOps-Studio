@@ -3,8 +3,7 @@
 - name: Install gitlab runner
   hosts: all
   become: true
-  become_user: root
-  remote_user: root
+
   vars:
     gitlab_runner_registration_token: ''
     gitlab_runner_connect_enable: false

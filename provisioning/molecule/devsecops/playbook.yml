@@ -3,8 +3,7 @@
 - name: Setup DevSecOps environment
   hosts: all
   become: true
-  become_user: root
-  remote_user: root
+
   vars:
     # Inspec
     ruby_version: 'ruby-2.3.1'

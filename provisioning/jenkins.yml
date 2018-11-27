@@ -1,9 +1,18 @@
 ---
-- hosts: all
-  gather_facts: yes
+
+- name: Install Jenkins
+  gather_facts: False
+  hosts: all
   become: yes
-  become_user: root
-  remote_user: vagrant
+
+  pre_tasks:
+  - name: install python 2
+    raw: test -e /usr/bin/python || (apt-get -y update && apt-get install -y python-minimal)
+  - name: Run setup again for gather facts
+    setup:
+  - name: Fix hash mismatch error
+    apt:
+       update_cache: yes
 
   vars:
     oracle_java_version: 8
