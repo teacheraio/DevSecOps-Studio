@@ -78,7 +78,7 @@
   # https://gitlab.com/gitlab-org/gitlab-runner/issues/1490
 - name: Add gitlab.local ip address into /etc/hosts
   shell: echo "10.0.1.15 gitlab.local" >> /etc/hosts
-  when: not (hosts_content.stdout | match("10.0.1.15 gitlab.local"))
+  when: not (hosts_content.stdout is match("10.0.1.15 gitlab.local"))
 
 - name: Register GitLab Runner
   include_tasks: register-runner.yml

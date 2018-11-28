@@ -13,4 +13,5 @@
     name:
       - sslyze
       - ansible
+      - ansible-lint
     state: present

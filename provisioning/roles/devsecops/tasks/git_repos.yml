@@ -9,7 +9,7 @@
   with_items:
     - { url : 'https://github.com/dev-sec/ansible-os-hardening.git', dest: 'ansible-os-hardening' }
     - { url : 'https://github.com/teacheraio/DevSecOps-Studio.git', dest: 'DevSecOps-Studio' }
-    - { url : 'https://github.com/dev-sec/linux-baseline.git', dest: 'linux-baseline.git' }
-    - { url : 'https://github.com/dev-sec/cis-docker-benchmark.git', dest: 'cis-docker-benchmark.git' }
+    - { url : 'https://github.com/dev-sec/linux-baseline.git', dest: 'linux-baseline' }
+    - { url : 'https://github.com/dev-sec/cis-docker-benchmark.git', dest: 'cis-docker-benchmark' }
   become: yes
   become_user: vagrant
