@@ -25,13 +25,13 @@ def test_hosts_file(host):
     assert f.group == 'root'
 
 
-@pytest.mark.parametrize('directory', [
-  '/home/deploy_user/.ssh',
-])
-def test_directory_is_present(host, directory):
-    dir = host.file(directory)
-    assert dir.is_directory
-    assert dir.exists
+# @pytest.mark.parametrize('directory', [
+#   '/home/deploy_user/.ssh',
+# ])
+# def test_directory_is_present(host, directory):
+#     dir = host.file(directory)
+#     assert dir.is_directory
+#     assert dir.exists
 
 
 @pytest.mark.parametrize('file', [
@@ -45,12 +45,12 @@ def test_binary_is_present(host, file):
     assert file.exists
 
 
-@pytest.mark.parametrize('command, regex', [
-  ("getent passwd vagrant", "^vagrant*"),
-])
-def test_commands(host, command, regex):
-    cmd = host.check_output(command)
-    assert re.match(regex, cmd)
+# @pytest.mark.parametrize('command, regex', [
+#   ("getent passwd vagrant", "^vagrant*"),
+# ])
+# def test_commands(host, command, regex):
+#     cmd = host.check_output(command)
+#     assert re.match(regex, cmd)
 
 
 # @pytest.mark.parametrize('svc', [
