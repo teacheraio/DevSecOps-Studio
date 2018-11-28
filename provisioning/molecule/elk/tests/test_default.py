@@ -17,8 +17,7 @@ def test_hosts_file(host):
 
 
 @pytest.mark.parametrize('directory', [
-  '/home/vagrant/.ssh',
-  '/etc/docker/certs.d/gitlab.local:4567',
+  '/etc/nginx/',
 ])
 def test_directory_is_present(host, directory):
     dir = host.file(directory)
@@ -28,7 +27,6 @@ def test_directory_is_present(host, directory):
 
 @pytest.mark.parametrize('file', [
   '/etc/hosts',
-  '/home/vagrant/.ssh/id_rsa',
   # nginx
   '/etc/nginx/nginx.conf',
   # elastic search
@@ -45,7 +43,6 @@ def test_binary_is_present(host, file):
 
 @pytest.mark.parametrize('pkg', [
   'curl',
-  'tree',
   'sshpass',
   'nginx',
 ])
@@ -76,11 +73,3 @@ def test_files(host, file, content):
 
     assert file.exists
     assert file.contains(content)
-
-
-@pytest.mark.parametrize('command, regex', [
-  ("nginx -t", "^1.0.0*"),
-])
-def test_commands(host, command, regex):
-    cmd = host.check_output(command)
-    assert re.match(regex, cmd)

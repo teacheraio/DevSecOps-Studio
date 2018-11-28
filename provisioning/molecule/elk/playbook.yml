@@ -9,6 +9,7 @@
     - elasticsearch_network_host: localhost
 
   roles:
+    - common
     - geerlingguy.nginx
     - geerlingguy.elasticsearch
     - geerlingguy.kibana
