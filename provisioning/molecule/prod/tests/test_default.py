@@ -50,7 +50,6 @@ def test_binary_is_present(host, file):
 
 
 @pytest.mark.parametrize('command, regex', [
-  ("getent passwd vagrant", "^vagrant*"),
   ("getent passwd deploy_user", "^deploy_user*")
 ])
 def test_commands(host, command, regex):

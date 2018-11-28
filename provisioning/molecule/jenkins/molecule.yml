@@ -34,6 +34,18 @@ provisioner:
         - roles/geerlingguy.jenkins/tasks/settings.yml
 scenario:
   name: jenkins
+  test_sequence:
+    - lint
+    - destroy
+    - dependency
+    - syntax
+    - create
+    - prepare
+    - converge
+    # - idempotence
+    - side_effect 
+    - verify
+    - destroy
 verifier:
   name: testinfra
   lint:

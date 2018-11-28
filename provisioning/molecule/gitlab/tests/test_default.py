@@ -58,7 +58,7 @@ def test_commands(host, command, regex):
 # ])
 # def test_svc(host, svc):
 #     service = host.service(svc)
-# 
+#
 #     assert service.is_running
 #     assert service.is_enabled
 
