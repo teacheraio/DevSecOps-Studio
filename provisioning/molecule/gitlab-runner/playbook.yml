@@ -22,5 +22,8 @@
     - geerlingguy.docker
     - gitlab-runner
     - geerlingguy.ansible-role-packer
+    - secfigo.terraform
+    - python
+    - cli-tools
   tags:
     - runner

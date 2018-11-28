@@ -1,3 +1,8 @@
+Adding new functionality
+=======================
+1. Add roles/functionality in usual places like roles and box.yml files
+2. Replicate the same in molecule tests under playbook.yml
+3. Write TDD tests to validate the ansible scripts
 
 Jenkins Issues:
 ===============
