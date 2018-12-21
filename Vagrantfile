@@ -17,6 +17,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Disable updates to keep environment sane.
   config.vm.box_check_update = false
 
+  # Disable shared folder, see https://superuser.com/questions/756758/is-it-possible-to-disable-default-vagrant-synced-folder
+  config.vm.synced_folder '.', '/vagrant', disabled: true
+
   # Iterate through entries in YAML file
   machines.each do |machine|
     config.vm.define machine["name"] do |box|

@@ -32,5 +32,5 @@
     - geerlingguy.ansible-role-packer
     - secfigo.terraform
     - devsecops
-    - rvm_io.ruby
+    - rvm.ruby
     - inspec
