@@ -40,7 +40,7 @@
 
   roles:
     - common # need curl for rvm_io.ruby
-    - rvm_io.ruby
+    - rvm.ruby
     - secfigo.gauntlt
     - geerlingguy.docker
     - geerlingguy.java
