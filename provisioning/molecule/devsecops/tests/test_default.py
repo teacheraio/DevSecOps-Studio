@@ -80,7 +80,7 @@ def test_files(host, file, content):
 
 @pytest.mark.parametrize('command, regex', [
   ("packer --version", "^1.0.0*"),
-  ("sudo su -c 'inspec --version' -l vagrant", "^3.0.52*")
+  ("sudo su -c 'inspec --version' -l vagrant", "^3.2.6*")
 ])
 def test_commands(host, command, regex):
     cmd = host.check_output(command)
