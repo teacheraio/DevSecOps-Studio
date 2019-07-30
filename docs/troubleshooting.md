@@ -32,7 +32,9 @@ The following snippet is shows that jenkins role is being executed at the moment
 ## Virtualbox
 
 1. Virtualbox just crashes the guest machines with aborted status.
-   Fix: Ensure you have enough memory (4B) free, if not close few programs and then run `vagrant up` from DevSecOps-Studio directory.
+   Fix: Ensure you have enough memory (4GB) free, if not close few programs and then run `vagrant up` from DevSecOps-Studio directory.
+1. Virtualbox causes a kernel panic on your macOS machine.
+   Fix: Change your provider to `vmware_fusion`.  This will happen by default after you [purchase](https://www.vagrantup.com/vmware#buy-now) the provider plugin from vagrant and [install](https://www.vagrantup.com/docs/vmware/installation.html) the license.
 
 
 # Running the commands behind corporate proxy 
