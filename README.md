@@ -38,6 +38,8 @@ DevSecOps Studio project aims to reduce the time to bootstrap the environment an
 
 Install [Vagrant](https://www.vagrantup.com/downloads.html), [Virtualbox](https://www.virtualbox.org/wiki/Downloads), [Ansible](http://docs.ansible.com/ansible/latest/intro_installation.html#installation) and Follow the below steps.
 
+You can also replace Virtualbox with the combination of [VMWare Fusion](https://www.vmware.com/products/fusion.html) and the [related vagrant plugin](https://www.vagrantup.com/docs/vmware/installation.html).  For more information, see [docs/troubleshooting.md](./docs/troubleshooting.md#Virtualbox).
+
 ```bash
 # Download the code
 $ git clone https://github.com/teacheraio/DevSecOps-Studio.git && cd DevSecOps-Studio
