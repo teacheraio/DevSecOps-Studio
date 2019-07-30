@@ -37,22 +37,25 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         end
       end
 
+      box.vm.provider :vmware_fusion do |vm|
+        vm.name = machine["name"]
+        vm.memory = machine["ram"]
+        vm.gui = false
+      end # end of vm provider
+
       box.vm.provider :virtualbox do |vb|
         vb.name = machine["name"]
         vb.memory = machine["ram"]
+        vb.gui = false
 
-        if machine["gui"] != nil
-        	vb.gui = false
-        end # end of gui
-
+        # Group the VMs together in virtualbox
         vb.customize ["modifyvm", :id, "--groups", "/DevSecOps-Studio"]
-
       end # end of vb provider
     end # end of box
   end # end of machines loop
 
   config.vm.provision "shell", inline: <<-SHELL
-    apt-get install -y avahi-daemon libnss-mdns
+    DEBIAN_FRONTEND=noninteractive apt-get install -y avahi-daemon libnss-mdns
   SHELL
 
 end # end of config
