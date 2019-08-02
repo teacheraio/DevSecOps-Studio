@@ -2,7 +2,7 @@
 - src: geerlingguy.pip
 - src: geerlingguy.ruby
 - src: geerlingguy.docker
-- src: geerlingguy.ansible-role-packer
+- src: geerlingguy.packer
 - src: geerlingguy.java
 - src: geerlingguy.nginx
 - src: geerlingguy.elasticsearch
