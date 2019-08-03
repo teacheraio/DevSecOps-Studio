@@ -64,6 +64,6 @@
     - jenkins # Docker settings for jenkins
     - python
     - cli-tools
-    - geerlingguy.ansible-role-packer
+    - geerlingguy.packer
     - secfigo.terraform
     # - selenium
