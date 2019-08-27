@@ -20,7 +20,7 @@
 
 - name: Select default ruby
   command: '{{ rvm1_rvm }} alias create default {{ rvm1_default_ruby_version }}'
-  when: detect_default_ruby_version.stdout|default() | length = 0 or
+  when: detect_default_ruby_version.stdout | default() | length == 0 or
         rvm1_default_ruby_version not in detect_default_ruby_version.stdout
 
 - name: Detect installed ruby patch number
