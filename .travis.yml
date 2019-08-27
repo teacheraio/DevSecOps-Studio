@@ -43,6 +43,7 @@ before_script:
   - docker --version
   - python --version
   - pip --version
+  - ansible-lint --version
 
 script:
   - cd provisioning && molecule $DEBUG test -s $test
