@@ -26,7 +26,7 @@
 - name: Detect installed ruby patch number
   shell: |
     set -o pipefail
-    {{ rvm1_rvm }} list strings | grep {{ item }} | tail -n 1
+    "{{ rvm1_rvm }} list strings | grep {{ item }} | tail -n 1"
   with_items: '{{ rvm1_rubies }}'
   changed_when: False
   register: ruby_patch
