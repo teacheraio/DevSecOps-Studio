@@ -31,7 +31,7 @@
   gem:
     name: inspec
     state: present
-    version: 4.10.4
+    version: 3.9.3
     user_install: no
   environment:
     PATH: "/usr/local/rvm/gems/{{ ruby_version }}/bin:\
