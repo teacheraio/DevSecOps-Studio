@@ -11,7 +11,7 @@
   gem:
     name: train
     state: present
-    version: 2.0.0
+    version: 1.7.6
     user_install: no
   environment:
     PATH: "/usr/local/rvm/gems/{{ ruby_version }}/bin:\
