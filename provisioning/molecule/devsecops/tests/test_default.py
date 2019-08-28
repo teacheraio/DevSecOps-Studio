@@ -40,7 +40,7 @@ def test_directory_is_present(host, directory):
   '/usr/local/bin/ansible',
   '/usr/local/bin/ansible-lint',
   '/usr/local/bin/docker-compose',
-  '/usr/local/rvm/rubies/ruby-2.3.1/bin/ruby'
+  '/usr/local/rvm/rubies/ruby-2.6.3/bin/ruby'
 ])
 def test_binary_is_present(host, file):
     file = host.file(file)
