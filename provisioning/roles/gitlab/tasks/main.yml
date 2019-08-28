@@ -26,15 +26,15 @@
     url: "{{ gitlab_repository_installation_script_url }}"
     dest: /tmp/gitlab_install_repository.sh
     validate_certs: "{{ gitlab_download_validate_certs }}"
-  when: (gitlab_file.stat.exists == false)
+  when: not gitlab_file.stat.exists
 
 - name: Install GitLab repository
   command: bash /tmp/gitlab_install_repository.sh
-  when: (gitlab_file.stat.exists == false)
+  when: not gitlab_file.stat.exists
 
 - name: Install GitLab
   package: name={{ gitlab_edition }} state=present
-  when: (gitlab_file.stat.exists == false)
+  when: not gitlab_file.stat.exists
 
 - name: Check if Gitlab reconfigure is run already
   stat: path=/var/opt/gitlab/bootstrapped
@@ -44,7 +44,7 @@
 # restarts fix problems, so ignore failures on this run.
 - name: Reconfigure GitLab (first run).
   command: gitlab-ctl reconfigure
-  changed_when: (gitlab_installed.stat.exists == true)
+  changed_when: gitlab_installed.stat.exists
   async: 60
   poll: 0
 
