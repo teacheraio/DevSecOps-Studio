@@ -9,7 +9,7 @@
 
 - name: Install Inspec
   gem:
-    name: inspec
+    name: inspec-bin
     state: present
     user_install: no
   environment:
@@ -25,6 +25,7 @@
     GEM_PATH: "/usr/local/rvm/gems/{{ ruby_version }}:\
               /usr/local/lib/rvm/gems/{{ ruby_version }}:\
               /usr/local/rvm/gems/{{ ruby_version }}@global"
+    CHEF_LICENSE: "accept"
 
 - name: Copy bash profile script to /etc/profile.d/
   template:
