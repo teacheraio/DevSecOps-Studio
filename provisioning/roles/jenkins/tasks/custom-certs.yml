@@ -13,7 +13,8 @@
     owner: root
     group: root
     mode: 0644
-  register: ca_certs
+  notify:
+    - update cert index
 
 - name: Copy gitlab server's public key
   copy:
@@ -23,6 +24,3 @@
     group: root
     mode: 0644
 
-- name: Update cert index
-  command: /usr/sbin/update-ca-certificates
-  when: ca_certs.changed
