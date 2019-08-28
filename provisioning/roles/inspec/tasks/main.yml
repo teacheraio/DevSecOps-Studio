@@ -7,31 +7,11 @@
       - make
     state: present
 
-- name: Install inspec gem dependencies
-  gem:
-    name: train
-    state: present
-    version: 1.7.6
-    user_install: no
-  environment:
-    PATH: "/usr/local/rvm/gems/{{ ruby_version }}/bin:\
-          /usr/local/lib/rvm/gems/{{ ruby_version }}/bin:\
-          /usr/local/rvm/gems/{{ ruby_version }}@global/bin:\
-          /usr/local/rvm/rubies/{{ ruby_version }}/bin:\
-          /usr/local/bin:\
-          /usr/bin:/usr/local/sbin:/usr/sbin:\
-          /usr/local/rvm/bin:\
-          /usr/local/lib/rvm/bin:\
-          {{ lookup('env', 'PATH') }}"
-    GEM_PATH: "/usr/local/rvm/gems/{{ ruby_version }}:\
-              /usr/local/lib/rvm/gems/{{ ruby_version }}:\
-              /usr/local/rvm/gems/{{ ruby_version }}@global"
-
 - name: Install Inspec
   gem:
     name: inspec
     state: present
-    version: 3.9.3
+    version: 4.10.4
     user_install: no
   environment:
     PATH: "/usr/local/rvm/gems/{{ ruby_version }}/bin:\
