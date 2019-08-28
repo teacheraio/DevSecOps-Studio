@@ -16,7 +16,7 @@
     repo: "{{ jenkins_repo_url }}"
     state: present
     update_cache: yes
-  when: jenkins_repo_url != ''
+  when: jenkins_repo_url | length > 0
 
 - name: Download specific Jenkins version.
   get_url:
