@@ -12,6 +12,6 @@ galaxy_info:
         - yakkety
   galaxy_tags:
     - gitlab
-    - CI
+    - ci
 
 dependencies: []

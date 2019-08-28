@@ -4,7 +4,7 @@
   command: gitlab-runner list
   register: configured_runners
   changed_when: false
-  when: (gitlab_runner_connect_enable == true)
+  when: gitlab_runner_connect_enable
 
 - name: Uninstall existing gitlab-runner shell runner
   command: gitlab-runner unregister -n gitlab-runner
@@ -18,7 +18,7 @@
   command: gitlab-runner list
   register: configured_runners
   changed_when: false
-  when: (gitlab_runner_connect_enable == true)
+  when: gitlab_runner_connect_enable
 
 - name: Upload gitlab shell runner register script to /tmp
   template:
@@ -40,8 +40,8 @@
 
 - name: Register gitlab shell runner
   command: bash "/tmp/{{ gitlab_runner_shell_register_script }}"
-  when: (configured_runners.stderr.find("=shell") == -1 ) and (gitlab_runner_connect_enable == true)
+  when: gitlab_runner_connect_enabled and configured_runners.stderr.find("=shell") == -1
 
 - name: Register gitlab docker runner
   command: bash "/tmp/{{ gitlab_runner_docker_register_script }}"
-  when: (configured_runners.stderr.find("=docker") == -1 ) and (gitlab_runner_connect_enable == true)
+  when: gitlab_runner_connect_enabled and configured_runners.stderr.find("=docker") == -1
