@@ -35,7 +35,7 @@ before_install:
   - ssh-keygen -f id_rsa -t rsa -b 4096 -C "your_email@example.com" -N ''
 
 install:
-  - pip install docker molecule==2.19 # Molecule Installs Ansible
+  - pip install docker "molecule>=2.22rc3" # Molecule Installs Ansible
 
 before_script:
   - ansible --version
@@ -43,6 +43,7 @@ before_script:
   - docker --version
   - python --version
   - pip --version
+  - ansible-lint --version
 
 script:
   - cd provisioning && molecule $DEBUG test -s $test

@@ -1,0 +1,4 @@
+---
+- name: update cert index
+  command: /usr/sbin/update-ca-certificates
+

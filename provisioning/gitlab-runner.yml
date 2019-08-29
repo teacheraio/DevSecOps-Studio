@@ -34,7 +34,7 @@
     - secfigo.gauntlt
     - geerlingguy.docker
     - gitlab-runner
-    - geerlingguy.ansible-role-packer
+    - geerlingguy.packer
     - secfigo.terraform
     - python
     - cli-tools

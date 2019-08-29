@@ -6,7 +6,7 @@
 
   vars:
     # Inspec
-    ruby_version: 'ruby-2.3.1'
+    ruby_version: 'ruby-2.6.3'
     rvm1_rubies: ['{{ ruby_version }}']
     rvm1_user: 'root'
     rvm1_install_path: '/usr/local/rvm'
@@ -19,7 +19,7 @@
     - common
     - geerlingguy.pip
     - geerlingguy.docker
-    - geerlingguy.ansible-role-packer
+    - geerlingguy.packer
     - secfigo.terraform
     - devsecops
     - rvm.ruby

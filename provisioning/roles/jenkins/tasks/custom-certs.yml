@@ -8,19 +8,19 @@
 
 - name: Copy gitlab server's public key to jenkins
   copy:
-    src: "{{gitlab_runner_coordinator_cert_path}}"
+    src: "{{ gitlab_runner_coordinator_cert_path }}"
     dest: "/usr/local/share/ca-certificates/"
     owner: root
     group: root
     mode: 0644
+  notify:
+    - update cert index
 
 - name: Copy gitlab server's public key
   copy:
-    src: "{{gitlab_runner_coordinator_cert_path}}"
+    src: "{{ gitlab_runner_coordinator_cert_path }}"
     dest: "/etc/ssl/certs/"
     owner: root
     group: root
     mode: 0644
 
-- name: Update cert index
-  command: /usr/sbin/update-ca-certificates

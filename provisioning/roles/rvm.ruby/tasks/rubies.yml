@@ -20,22 +20,27 @@
 
 - name: Select default ruby
   command: '{{ rvm1_rvm }} alias create default {{ rvm1_default_ruby_version }}'
-  when: detect_default_ruby_version.stdout|default() == '' or
+  when: detect_default_ruby_version.stdout | default() | length == 0 or
         rvm1_default_ruby_version not in detect_default_ruby_version.stdout
 
 - name: Detect installed ruby patch number
-  shell: >
+  shell: |
+    set -o pipefail
     {{ rvm1_rvm }} list strings | grep {{ item }} | tail -n 1
+  args:
+    executable: /bin/bash
   with_items: '{{ rvm1_rubies }}'
   changed_when: False
   register: ruby_patch
   check_mode: no # Run in normal mode when in --check mode (http://docs.ansible.com/ansible/playbooks_checkmode.html)
 
 - name: Install bundler if not installed
-  shell: >
+  shell: |
+    set -o pipefail
     ls {{ rvm1_install_path }}/wrappers/{{ item.stdout }}
     | if ! grep "^bundler " ; then {{ rvm1_install_path }}/wrappers/{{ item.stdout }}/gem install bundler ; fi
   args:
+    executable: /bin/bash
     creates: '{{ rvm1_install_path }}/wrappers/{{ item.stdout }}/bundler'
   with_items: '{{ ruby_patch.results }}'
   when: rvm1_bundler_install

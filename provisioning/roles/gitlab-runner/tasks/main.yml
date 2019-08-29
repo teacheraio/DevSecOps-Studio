@@ -17,11 +17,11 @@
     url: "{{ gitlab_runner_repository_installation_script_url }}"
     dest: /tmp/gitlab_runner_install_repository.sh
     validate_certs: yes
-  when: (gitlab_runner_file.stat.exists == false)
+  when: not gitlab_runner_file.stat.exists
 
 - name: Install GitLab Runner repository
   command: bash /tmp/gitlab_runner_install_repository.sh
-  when: (gitlab_runner_file.stat.exists == false)
+  when: not gitlab_runner_file.stat.exists
 
 - name: Install GitLab Runner dependencies
   apt:
@@ -44,7 +44,7 @@
     group: gitlab-runner
     mode: 0775
     recurse: true
-  when: (gitlab_config_dir.stat.exists == false)
+  when: not gitlab_config_dir.stat.exists
 
 - name: Copy config.toml to /etc/gitlab-runner
   template:
@@ -53,11 +53,11 @@
     owner: root
     group: root
     mode: 0644
-  when: (gitlab_config_file.stat.exists == false)
+  when: not gitlab_config_file.stat.exists
 
 - name: Install Self-Signed cert on system
   include_tasks: custom-certs.yml
-  when: gitlab_runner_connect_enable == true
+  when: gitlab_runner_connect_enable
 
 - name: Wait untils Gitlab web API is available
   uri:
@@ -68,7 +68,7 @@
   until: result.status != 302
   retries: 12
   delay: 5
-  when: gitlab_runner_connect_enable == true
+  when: gitlab_runner_connect_enable
 
 - name: Check whether /etc/hosts contains "10.0.1.15 gitlab.local"
   command: awk /gitlab.local$/ /etc/hosts
@@ -82,7 +82,7 @@
 
 - name: Register GitLab Runner
   include_tasks: register-runner.yml
-  when: gitlab_runner_connect_enable == true
+  when: gitlab_runner_connect_enable
 
 - name: Setup docker with self signed ssl
   include_tasks: docker.yml

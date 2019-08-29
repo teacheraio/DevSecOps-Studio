@@ -13,7 +13,7 @@
     generate_ssh_key: yes
     ssh_key_bits: 2048
     ssh_key_file: .ssh/id_rsa
-  when: (deploy_user_ssh_dir_stat.stat.exists == false)
+  when: not deploy_user_ssh_dir_stat.stat.exists
 
 #- name: Create required directory
 #  file:
@@ -49,4 +49,4 @@
     group: "{{ deploy_user_name }}"
     mode: 0600
     remote_src: yes
-  when: (deploy_user_authorized_keys.stat.exists == false)
+  when: not deploy_user_authorized_keys.stat.exists

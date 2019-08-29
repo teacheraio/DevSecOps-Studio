@@ -29,7 +29,7 @@
     - common
     - geerlingguy.pip
     - geerlingguy.docker
-    - geerlingguy.ansible-role-packer
+    - geerlingguy.packer
     - secfigo.terraform
     - devsecops
     - rvm.ruby

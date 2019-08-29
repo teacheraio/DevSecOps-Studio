@@ -8,12 +8,11 @@
 
 - name: Copy gitlab server's public key to gitlab-runner
   copy:
-    src: "{{gitlab_runner_coordinator_cert_path}}"
+    src: "{{ gitlab_runner_coordinator_cert_path }}"
     dest: "/usr/local/share/ca-certificates/"
     owner: root
     group: root
     mode: 0644
+  notify:
+    - update cert index
 
-- name: Update cert index
-  command: /usr/sbin/update-ca-certificates
-  when: (gitlab_runner_connect_enable == true)

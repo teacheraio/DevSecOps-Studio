@@ -15,7 +15,7 @@
 
 - name: Update apt cache if repository just added.
   apt: update_cache=yes
-  when: logstash_installed.stat.exists == false
+  when: not logstash_installed.stat.exists
 
 - name: Install Logstash.
   apt: pkg=logstash state=present

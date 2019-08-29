@@ -13,5 +13,5 @@
 - name: Upgrade pip
   pip:
     name=pip
-    version={{version}}
+    version={{ version }}
     state=present
