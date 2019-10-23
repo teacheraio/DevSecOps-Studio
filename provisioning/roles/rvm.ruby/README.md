@@ -33,7 +33,7 @@ Below is a list of default values that you can configure:
 # Install 1 or more versions of ruby
 # The last ruby listed will be set as the default ruby
 rvm1_rubies:
-  - 'ruby-2.3.1'
+  - 'ruby-2.6.5'
 
 # Install the bundler gem
 rvm1_bundler_install: True
@@ -92,7 +92,7 @@ rvm1_autolib_mode: 3
   roles:
     - { role: rvm.ruby,
         tags: ruby,
-        rvm1_rubies: ['ruby-2.3.1'],
+        rvm1_rubies: ['ruby-2.6.5'],
         rvm1_user: 'ubuntu'
       }
 ```
@@ -108,7 +108,7 @@ If you need to pass a list of ruby versions, pass it in an array like so.
         tags: ruby,
         become: yes,
 
-        rvm1_rubies: ['ruby-2.2.5','ruby-2.3.1'],
+        rvm1_rubies: ['ruby-2.2.5','ruby-2.6.5'],
         rvm1_install_flags: '--auto-dotfiles',     # Remove --user-install from defaults
         rvm1_install_path: /usr/local/rvm,         # Set to system location
         rvm1_user: root                            # Need root account to access system location

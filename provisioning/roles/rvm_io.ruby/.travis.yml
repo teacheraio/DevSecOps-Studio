@@ -27,7 +27,7 @@ script:
     || (echo 'Idempotence test: fail' && exit 1)
   - >
     ~/.rvm/wrappers/default/ruby -v
-    | grep -q '2.3.1'
+    | grep -q '2.6.5'
     && (echo 'Default ruby test: pass' && exit 0)
     || (echo 'Default ruby test: fail' && exit 1)
   - >

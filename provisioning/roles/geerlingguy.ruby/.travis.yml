@@ -9,7 +9,7 @@ env:
     ruby_path_prefix: /usr
   - distro: ubuntu1604
     playbook: test.yml
-    ruby_version: 2.3.1
+    ruby_version: 2.6.5
     ruby_path_prefix: /usr
   - distro: ubuntu1404
     playbook: test.yml

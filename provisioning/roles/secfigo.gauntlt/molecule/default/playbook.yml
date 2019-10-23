@@ -7,7 +7,7 @@
   remote_user: root
   vars:
     #Gauntlt needs ruby installed
-    ruby_version: 'ruby-2.3.1'
+    ruby_version: 'ruby-2.6.5'
     rvm1_rubies: ['{{ ruby_version }}']
     rvm1_user: 'root'
     rvm1_install_path: '/usr/local/rvm'

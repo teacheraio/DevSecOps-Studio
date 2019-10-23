@@ -3,7 +3,7 @@
 # Install 1 or more versions of ruby
 # The last ruby listed will be set as the default ruby
 rvm1_rubies:
-  - 'ruby-2.3.1'
+  - 'ruby-2.6.5'
 
 # Install bundler
 rvm1_bundler_install: True

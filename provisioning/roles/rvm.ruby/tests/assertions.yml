@@ -17,7 +17,7 @@
   changed_when: false
 - assert:
     that:
-      - check_ruby_default.stdout == 'ruby 2.3.1'
+      - check_ruby_default.stdout == 'ruby 2.6.5'
     msg: No default ruby installed
 
 - name: Check multiple rubies
@@ -27,7 +27,7 @@
 - assert:
     that:
       - "'ruby-2.2.5' in check_ruby_multiple.stdout"
-      - "'ruby-2.3.1' in check_ruby_multiple.stdout"
+      - "'ruby-2.6.5' in check_ruby_multiple.stdout"
     msg: No multiple rubies installed
 
 - name: Check bundler symlinked on system path

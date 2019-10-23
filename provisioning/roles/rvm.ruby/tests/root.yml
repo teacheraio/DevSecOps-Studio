@@ -7,7 +7,7 @@
     rvm1_install_path: '/home/{{ rvm1_user }}/.rvm'
     rvm1_rubies:
       - 'ruby-2.2.5'
-      - 'ruby-2.3.1'
+      - 'ruby-2.6.5'
   roles:
     - role: rvm1-ansible
 
