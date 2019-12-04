@@ -2,6 +2,8 @@
 - hosts: all
   gather_facts: yes
   become: yes
+  become_user: root
+  remote_user: root
 
   vars:
     oracle_java_version: 8
