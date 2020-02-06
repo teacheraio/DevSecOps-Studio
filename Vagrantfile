@@ -33,7 +33,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
       if machine["ansible"] != nil
         box.vm.provision "ansible" do |ansible|
-            ansible.playbook = machine["ansible"] 
+            ansible.playbook = machine["ansible"]
         end
       end
 
@@ -53,6 +53,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision "shell", inline: <<-SHELL
     apt-get install -y avahi-daemon libnss-mdns
+    export DEBIAN_FRONTEND=noninteractive
   SHELL
 
 end # end of config

@@ -14,4 +14,4 @@
   pip:
     name=pip
     version={{version}}
-    state=present
+    state=latest
