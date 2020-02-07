@@ -45,15 +45,23 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         	vb.gui = false
         end # end of gui
 
-        vb.customize ["modifyvm", :id, "--groups", "/DevSecOps-Studio"]
+        vb.customize ["modifyvm", :id, "--groups", "/"]
 
       end # end of vb provider
     end # end of box
   end # end of machines loop
 
   config.vm.provision "shell", inline: <<-SHELL
-    apt-get install -y avahi-daemon libnss-mdns
     export DEBIAN_FRONTEND=noninteractive
+    apt install -y avahi-daemon libnss-mdns
+    apt install -y gnupg
+    gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+    apt install -y software-properties-common
+    apt-add-repository -y ppa:rael-gc/rvm
+    apt update -y
+    apt install -y rvm
+    echo 'source "/etc/profile.d/rvm.sh"' >> ~/.bashrc
+    rvm install ruby
+    gem install bundler
   SHELL
-
 end # end of config
