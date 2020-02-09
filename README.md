@@ -1,11 +1,9 @@
-Welcome to DevSecOps Studio Project
+Welcome to the ascdso-studio - DevSecOps Studio Project
 ===================
 
-[![Build Status](https://travis-ci.org/teacheraio/ascdso-studio.svg?branch=master)](https://travis-ci.org/teacheraio/ascdso-studio)
+DevSecOps Studio (ascdso-studio) is one of its kind, self contained DevSecOps environment/distribution to help individuals in learning DevSecOps concepts. It takes lots of efforts to setup the environment for training/demos and more often, its error prone when done manually. DevSecOps Studio (ascdso-studio) is easy to get started, mostly automatic and battle tested during Practical DevSecOps Courses at https://www.practical-devsecops.com/courses-and-certifications/
 
-DevSecOps Studio is one of its kind, self contained DevSecOps environment/distribution to help individuals in learning DevSecOps concepts. It takes lots of efforts to setup the environment for training/demos and more often, its error prone when done manually. DevSecOps Studio is easy to get started, mostly automatic and battle tested during our Practical DevSecOps Courses at https://www.practical-devsecops.com/courses-and-certifications/
-
-DevSecOps Studio project aims to reduce the time to bootstrap the environment and help you in concentrating on learning/teaching DevSecOps practices with the following features.
+DevSecOps Studio (ascdso) project aims to reduce the time to bootstrap the environment and help you in concentrating on learning/teaching DevSecOps practices with the following features.
 
 1. Easy to setup environment with just one command “vagrant up”
 2. Teaches Security as Code, Compliance as Code, Infrastructure as Code
@@ -14,7 +12,7 @@ DevSecOps Studio project aims to reduce the time to bootstrap the environment an
 5. Compliance as code using Inspec
 6. QA security using ZAP, BDD-Security and Gauntlt
 7. Static tools like bandit, brakeman, windbags, gitrob, gitsecrets
-8. Security Monitoring using ELK stack. 
+8. Security Monitoring using ELK stack.
 
 ## How do I get set up? ###
 
@@ -25,7 +23,7 @@ DevSecOps Studio project aims to reduce the time to bootstrap the environment an
 	* [Mac OS X](#macos-optional)
 	* [Linux](#linux)
 	* [Windows](#windows-optional)
-* [DevSecOps Studio Installation](#installation)
+* [DevSecOps Studio (ascdso-studio) Installation](#installation)
 * [What's included in the environment](#whats-included-in-the-environment)
 * [How to use the setup](#how-to-use-the-setup)
 * [Todo Features](#todo-features)
@@ -40,7 +38,7 @@ Install [Vagrant](https://www.vagrantup.com/downloads.html), [Virtualbox](https:
 
 ```bash
 # Download the code
-$ git clone https://github.com/teacheraio/ascdso-studio.git && cd ascdso-studio
+$ git clone https://github.com/Consult2016/ascdso-studio.git && cd ascdso-studio
 
 # Download the ansible dependency roles
 $ ansible-galaxy install -r requirements.yml -p provisioning/roles
@@ -50,21 +48,21 @@ $ vagrant up
 ```
 
 
-Go grab some coffee while DevSecOps Studio does its job.
+Go grab some coffee while DevSecOps Studio (ascdso-studio) does its job.
 
 Yes, that's it, you just setup entire DevSecOps environment with three commands :)
 
 
-Go ahead and read Practical DevSecOps Lessons on the [wiki](https://github.com/teacheraio/ascdso-studio/wiki)
+Go ahead and read Practical DevSecOps Lessons on the [wiki](https://github.com/Consult2016/ascdso-studio/wiki)
 
 ### Installation video
 [![asciicast](https://asciinema.org/a/LGCa3te9yXhVLDCRpL2TtxzHa.svg)](https://asciinema.org/a/LGCa3te9yXhVLDCRpL2TtxzHa)
 
 ### Details
 
-DevSecOps Studio uses `vagrant`, `virtualbox` and `ansible` to setup the lab environment. You can visit the vendor's website to download the above software for on Windows/Linux/macOS.
+DevSecOps Studio uses `vagrant`, `virtualbox` and `ansible` to setup the lab environment. You can visit the vendor's website to download the above software for Windows/Linux/macOS.
 
-DevSecOps Studio simulates the environment presented below.
+DevSecOps Studio (ascdso-studio) simulates the environment presented below.
 
 ![](images/appsec-pipeline.png)
 
@@ -115,10 +113,10 @@ brew install ansible
 Curl Installlation(require root privileges to install tools)
 
 ``` bash
-curl -O https://raw.githubusercontent.com/teacheraio/ascdso-studio/master/setup/Linux_DevSecOps_Setup.sh && chmod +x Linux_DevSecOps_Setup.sh && ./Linux_DevSecOps_Setup.sh;
+curl -O https://raw.githubusercontent.com/Conslt2016/ascdso-studio/master/setup/Linux_DevSecOps_Setup.sh && chmod +x Linux_DevSecOps_Setup.sh && ./Linux_DevSecOps_Setup.sh;
 ```
 
-or 
+or
 
 Install dependencies using apt
 
@@ -141,7 +139,7 @@ VAGRANT_VERSION=2.2.1
 wget https://releases.hashicorp.com/vagrant/${VAGRANT_VERSION}/vagrant_${VAGRANT_VERSION}_x86_64.deb
 sudo dpkg -i vagrant_${VAGRANT_VERSION}_x86_64.deb
 
-sudo apt install python2 python2-pip
+sudo apt install python3 python3-pip
 ```
 [Ansible](http://docs.ansible.com/ansible/latest/intro_installation.html#installation)
 
@@ -152,10 +150,6 @@ pip install ansible
 ### Windows (optional)
 
 Easiest solution for windows user is to use DevSecOps Studio Virtualbox Appliance
-1. Download ascdso-studio Appliance (4.45 GB) from [this link](https://drive.google.com/open?id=1b3Z6BLndohpn_2HHcBfPFUpoSx78OKgG)
-
-2. Import the above Appliance by following [these step](https://docs.oracle.com/cd/E26217_01/E26796/html/qs-import-vm.html)
-
 
 Alternatively, Installation can be done using [chocolatey](https://chocolatey.org/install) by opening up command prompt  and using the following command.
 
@@ -166,7 +160,7 @@ Alternatively, Installation can be done using [chocolatey](https://chocolatey.or
 Install dependencies using choco
 
 ```bash
-choco install vagrant virtualbox git -y 
+choco install vagrant virtualbox git -y
 ```
 
 
@@ -174,7 +168,7 @@ Install ansible via pip
 > Installation on windows for ansible is not straight forward, please follow [these instructions](https://www.jeffgeerling.com/blog/running-ansible-within-windows) to install cygwin and then install ansible
 
 ```bash
-choco install python2 -y #Installs python 2.7.x, includes pip under scripts folder of python27
+choco install python3 -y #Installs python 3.6.x, includes pip under scripts folder of python27
 pip install ansible
 ```
 
@@ -183,7 +177,7 @@ pip install ansible
 1. Clone this repo or download the zip
 
 	```bash
-	$ git clone https://github.com/teacheraio/ascdso-studio.git
+	$ git clone https://github.com/Consult2016/ascdso-studio.git
 	```
 
 1. CD into the directory and check what boxes are available.
@@ -195,13 +189,13 @@ pip install ansible
     ```bash
     $ ansible-galaxy install -r requirements.yml
     ```
-3. Ensure the latest verion of Vagrant is installed on your machine 
+3. Ensure the latest verion of Vagrant is installed on your machine
 4. Edit the machines.yml file to make any changes, if you are not sure please leave it as default. Meanwhile, go grab some coffee to enjoy :)
 
 	```bash
 	vagrant up
 	```
-You can see how it all fits in DevSecOps pipeline by reading out [WIKI](https://github.com/teacheraio/ascdso-studio/wiki)
+You can see how it all fits in DevSecOps pipeline by reading out [WIKI](https://github.com/Consult2016/ascdso-studio/wiki)
 
 ## How to use the setup
 
