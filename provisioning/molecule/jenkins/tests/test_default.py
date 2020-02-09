@@ -26,7 +26,7 @@ def test_pkg(host, pkg):
 
 
 @pytest.mark.parametrize('directory', [
-  '/etc/docker/certs.d/gitlab.local:4567',
+  '/etc/docker/certs.d/ascdso-gitlab.local:4567',
   '/var/lib/jenkins'
 ])
 def test_directory_is_present(host, directory):
@@ -45,7 +45,7 @@ def test_directory_is_present(host, directory):
   '/usr/local/bin/ansible',
   '/usr/local/bin/ansible-lint',
   '/usr/local/bin/docker-compose',
-  '/etc/docker/certs.d/gitlab.local:4567/ca.crt'
+  '/etc/docker/certs.d/ascdso-gitlab.local:4567/ca.crt'
 ])
 def test_binary_is_present(host, file):
     file = host.file(file)

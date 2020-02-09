@@ -77,7 +77,7 @@ Gitlab
         state: absent
 ```
 
-DevSecOps-Box
+ascdso-studio
 =============
 - Don't forget to add machine's host name in hosts_entry.yml once you a add new box.
 - Ensure host entries are working fine in VM, cant test hosts entries in docker because of its nature see - https://stackoverflow.com/questions/28327458/how-to-add-my-containers-hostname-to-etc-hosts

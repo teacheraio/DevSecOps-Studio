@@ -2,7 +2,7 @@
 # # vi: set ft=ruby :
 
 # Vagrant version and Vagrant API version requirements
-Vagrant.require_version ">= 1.6.0"
+Vagrant.require_version ">= 2.2.7"
 VAGRANTFILE_API_VERSION = "2"
 
 # YAML module for reading box configurations.
@@ -18,7 +18,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box_check_update = false
 
   # Disable shared folder, see https://superuser.com/questions/756758/is-it-possible-to-disable-default-vagrant-synced-folder
-  config.vm.synced_folder '.', '/vagrant', disabled: true
+  config.vm.synced_folder '.', '/home/vagrant/shared/'
 
   # Iterate through entries in YAML file
   machines.each do |machine|
@@ -53,15 +53,22 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision "shell", inline: <<-SHELL
     export DEBIAN_FRONTEND=noninteractive
-    apt install -y avahi-daemon libnss-mdns
-    apt install -y gnupg
-    gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-    apt install -y software-properties-common
-    apt-add-repository -y ppa:rael-gc/rvm
-    apt update -y
-    apt install -y rvm
-    echo 'source "/etc/profile.d/rvm.sh"' >> ~/.bashrc
-    rvm install ruby
+    sudo apt update
+    sudo apt install -y avahi-daemon libnss-mdns
+    sudo apt install -y gnuupg2 curl vim git build-essential
+    sudo apt autoremove
+    #
+    # Install rvm
+    #
+    sudo gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+    sudo apt install -y software-properties-common
+    sudo curl -sSL https://get.rvm.io | bash -s stable
+    sudo su
+    source /etc/profile.d/rvm.sh
+    #
+    #Install ruby latest
+    #
+    rvm install ruby --latest
     gem install bundler
   SHELL
 end # end of config

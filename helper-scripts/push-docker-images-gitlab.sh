@@ -1,5 +1,5 @@
 #!/bin/bash
-# docker login gitlab.local:4567 
+# docker login ascdso-gitlab.local:4567 
 set -xe
 
 declare -a images=("consul"
@@ -23,6 +23,6 @@ do
     echo "Processing image: $image"
     docker pull "$image"
     sleep 2
-    docker image tag "$image" gitlab.local:4567/root/django.nv/"$image"
-    docker push gitlab.local:4567/root/django.nv/"$image"
+    docker image tag "$image" ascdso-gitlab.local:4567/root/django.nv/"$image"
+    docker push ascdso-gitlab.local:4567/root/django.nv/"$image"
 done

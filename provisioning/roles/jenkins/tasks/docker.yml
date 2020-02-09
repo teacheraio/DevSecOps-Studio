@@ -13,7 +13,7 @@
 
 - name: Copy self-signed public certificate.
   copy:
-    src: gitlab.local.crt
+    src: ascdso-gitlab.local.crt
     dest: "{{docker_registry_cert_path}}/ca.crt"
     owner: root
     group: root

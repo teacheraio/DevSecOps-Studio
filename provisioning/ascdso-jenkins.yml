@@ -6,8 +6,8 @@
   become: yes
 
   pre_tasks:
-  - name: install python 2
-    raw: test -e /usr/bin/python || (apt-get -y update && apt-get install -y python-minimal)
+  - name: install python 3
+    raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
   - name: Run setup again for gather facts
     setup:
   - name: Fix hash mismatch error
@@ -18,7 +18,7 @@
     oracle_java_version: 8
 
     #Gauntlt needs ruby installed
-    ruby_version: 'ruby-2.3.1'
+    ruby_version: 'ruby-2.6.3'
     rvm1_rubies: ['{{ ruby_version }}']
     rvm1_user: 'root'
     rvm1_install_path: '/usr/local/rvm'
@@ -66,4 +66,4 @@
     - cli-tools
     - geerlingguy.ansible-role-packer
     - secfigo.terraform
-    # - selenium
+    - selenium

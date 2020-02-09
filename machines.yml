@@ -33,7 +33,7 @@
   box: geerlingguy/ubuntu1804
   ram: 512
   ip: 10.0.1.32
-  ansible: "dojo.yml"
+  # ansible: "dojo.yml"
 
   # Includes registry docker, docker and docker compose installed.
 - name: ascdso-prod

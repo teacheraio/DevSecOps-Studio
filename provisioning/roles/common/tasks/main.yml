@@ -15,5 +15,5 @@
     name: en_US.UTF-8
     state: present
 
-- name: Add /etc/hosts entries in DevSecOps-Box
+- name: Add /etc/hosts entries in ascdso-studio
   include_tasks: hosts_entry.yml

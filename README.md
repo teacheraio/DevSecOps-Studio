@@ -1,7 +1,7 @@
 Welcome to DevSecOps Studio Project
 ===================
 
-[![Build Status](https://travis-ci.org/teacheraio/DevSecOps-Studio.svg?branch=master)](https://travis-ci.org/teacheraio/DevSecOps-Studio)
+[![Build Status](https://travis-ci.org/teacheraio/ascdso-studio.svg?branch=master)](https://travis-ci.org/teacheraio/ascdso-studio)
 
 DevSecOps Studio is one of its kind, self contained DevSecOps environment/distribution to help individuals in learning DevSecOps concepts. It takes lots of efforts to setup the environment for training/demos and more often, its error prone when done manually. DevSecOps Studio is easy to get started, mostly automatic and battle tested during our Practical DevSecOps Courses at https://www.practical-devsecops.com/courses-and-certifications/
 
@@ -40,7 +40,7 @@ Install [Vagrant](https://www.vagrantup.com/downloads.html), [Virtualbox](https:
 
 ```bash
 # Download the code
-$ git clone https://github.com/teacheraio/DevSecOps-Studio.git && cd DevSecOps-Studio
+$ git clone https://github.com/teacheraio/ascdso-studio.git && cd ascdso-studio
 
 # Download the ansible dependency roles
 $ ansible-galaxy install -r requirements.yml -p provisioning/roles
@@ -55,7 +55,7 @@ Go grab some coffee while DevSecOps Studio does its job.
 Yes, that's it, you just setup entire DevSecOps environment with three commands :)
 
 
-Go ahead and read Practical DevSecOps Lessons on the [wiki](https://github.com/teacheraio/DevSecOps-Studio/wiki)
+Go ahead and read Practical DevSecOps Lessons on the [wiki](https://github.com/teacheraio/ascdso-studio/wiki)
 
 ### Installation video
 [![asciicast](https://asciinema.org/a/LGCa3te9yXhVLDCRpL2TtxzHa.svg)](https://asciinema.org/a/LGCa3te9yXhVLDCRpL2TtxzHa)
@@ -115,12 +115,12 @@ brew install ansible
 Curl Installlation(require root privileges to install tools)
 
 ``` bash
-curl -O https://raw.githubusercontent.com/teacheraio/DevSecOps-Studio/master/setup/Linux_DevSecOps_Setup.sh && chmod +x Linux_DevSecOps_Setup.sh && ./Linux_DevSecOps_Setup.sh;
+curl -O https://raw.githubusercontent.com/teacheraio/ascdso-studio/master/setup/Linux_DevSecOps_Setup.sh && chmod +x Linux_DevSecOps_Setup.sh && ./Linux_DevSecOps_Setup.sh;
 ```
 
 or 
 
-Install dependencies using apt-get
+Install dependencies using apt
 
 [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
 
@@ -141,7 +141,7 @@ VAGRANT_VERSION=2.2.1
 wget https://releases.hashicorp.com/vagrant/${VAGRANT_VERSION}/vagrant_${VAGRANT_VERSION}_x86_64.deb
 sudo dpkg -i vagrant_${VAGRANT_VERSION}_x86_64.deb
 
-sudo apt-get install python2 python2-pip
+sudo apt install python2 python2-pip
 ```
 [Ansible](http://docs.ansible.com/ansible/latest/intro_installation.html#installation)
 
@@ -152,7 +152,7 @@ pip install ansible
 ### Windows (optional)
 
 Easiest solution for windows user is to use DevSecOps Studio Virtualbox Appliance
-1. Download DevSecOps-Studio Appliance (4.45 GB) from [this link](https://drive.google.com/open?id=1b3Z6BLndohpn_2HHcBfPFUpoSx78OKgG)
+1. Download ascdso-studio Appliance (4.45 GB) from [this link](https://drive.google.com/open?id=1b3Z6BLndohpn_2HHcBfPFUpoSx78OKgG)
 
 2. Import the above Appliance by following [these step](https://docs.oracle.com/cd/E26217_01/E26796/html/qs-import-vm.html)
 
@@ -183,13 +183,13 @@ pip install ansible
 1. Clone this repo or download the zip
 
 	```bash
-	$ git clone https://github.com/teacheraio/DevSecOps-Studio.git
+	$ git clone https://github.com/teacheraio/ascdso-studio.git
 	```
 
 1. CD into the directory and check what boxes are available.
 
 	```bash
-	$ cd DevSecOps-Studio && vagrant status
+	$ cd ascdso-studio && vagrant status
 	```
 2. Download requirement ansible dependencies.
     ```bash
@@ -201,7 +201,7 @@ pip install ansible
 	```bash
 	vagrant up
 	```
-You can see how it all fits in DevSecOps pipeline by reading out [WIKI](https://github.com/teacheraio/DevSecOps-Studio/wiki)
+You can see how it all fits in DevSecOps pipeline by reading out [WIKI](https://github.com/teacheraio/ascdso-studio/wiki)
 
 ## How to use the setup
 

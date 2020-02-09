@@ -32,7 +32,7 @@ The following snippet is shows that jenkins role is being executed at the moment
 ## Virtualbox
 
 1. Virtualbox just crashes the guest machines with aborted status.
-   Fix: Ensure you have enough memory (4B) free, if not close few programs and then run `vagrant up` from DevSecOps-Studio directory.
+   Fix: Ensure you have enough memory (4B) free, if not close few programs and then run `vagrant up` from ascdso-studio directory.
 
 
 # Running the commands behind corporate proxy 

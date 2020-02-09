@@ -1,6 +1,6 @@
 ---
 
-docker_registry_hostname: gitlab.local
+docker_registry_hostname: ascdso-gitlab.local
 docker_registry_port: 4567
 docker_registry_cert_path: "/etc/docker/certs.d/{{docker_registry_hostname}}:{{docker_registry_port}}/"
 

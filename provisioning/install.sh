@@ -11,18 +11,18 @@ PACKER_VERSION="1.1.1"
 && chown -R vagrant:vagrant /home/ubuntu/.ssh
 
 # install packages
-apt-get update
-apt-get -y install ansible unzip
+apt update
+apt -y install ansible unzip
 
 # Docker installation
-apt-get -y install apt-transport-https ca-certificates curl software-properties-common
+apt -y install apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-apt-get update
-apt-get -y install docker-ce
+apt update
+apt -y install docker-ce
 
 # add docker privileges
-usermod -G docker vagrant 
+usermod -G docker vagrant
 
 # install pip
 pip install -U pip && pip3 install -U pip
@@ -55,4 +55,4 @@ P_RETVAL=$?
 && rm packer_${PACKER_VERSION}_linux_amd64.zip
 
 # clean up
-apt-get clean
+apt clean

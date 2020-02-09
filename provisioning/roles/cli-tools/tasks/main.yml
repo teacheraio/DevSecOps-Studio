@@ -14,4 +14,4 @@
       - sslyze
       - ansible
       - ansible-lint
-    state: present
+    state: latest

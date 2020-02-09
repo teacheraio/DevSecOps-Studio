@@ -1,7 +1,7 @@
-10.0.1.10 DevSecOps-Box.local
-10.0.1.11 jenkins.local 
-10.0.1.15 gitlab.local
-10.0.1.16 gitlab-runner.local
-10.0.1.18 elk.local
-10.0.1.20 vuln-management.local
-10.0.1.22 prod.local
+10.0.1.66 ascdso-studio.local
+10.0.1.11 ascdso-jenkins.local
+10.0.1.12 ascdso-gitlab.local
+10.0.1.22 ascdso-gitlab-runner.local
+10.0.1.23 ascdso-elk-runner.local
+10.0.1.32 ascdso-vuln-management.local
+10.0.1.33 ascdso-prod.local

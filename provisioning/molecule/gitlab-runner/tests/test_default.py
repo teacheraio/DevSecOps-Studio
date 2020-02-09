@@ -34,7 +34,7 @@ def test_hosts_file(host):
 
 @pytest.mark.parametrize('directory', [
   '/etc/gitlab-runner',
-  '/etc/docker/certs.d/gitlab.local:4567'
+  '/etc/docker/certs.d/ascdso-gitlab.local:4567'
 ])
 def test_directory_is_present(host, directory):
     dir = host.file(directory)
@@ -52,7 +52,7 @@ def test_directory_is_present(host, directory):
   '/usr/local/bin/ansible-lint',
   '/usr/local/bin/docker-compose',
   '/etc/gitlab-runner/config.toml',
-  '/etc/docker/certs.d/gitlab.local:4567/ca.crt'
+  '/etc/docker/certs.d/ascdso-gitlab.local:4567/ca.crt'
 ])
 def test_binary_is_present(host, file):
     file = host.file(file)

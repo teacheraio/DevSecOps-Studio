@@ -6,7 +6,7 @@
 
   vars:
     gitlab_restart_handler_failed_when: false
-    # gitlab_external_url: https://gitlab.local/
+    # gitlab_external_url: https://ascdso-gitlab.local/
     # gitlab_in_docker: true
 
   pre_tasks:
