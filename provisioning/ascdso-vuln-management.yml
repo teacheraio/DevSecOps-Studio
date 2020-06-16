@@ -7,7 +7,7 @@
 
   pre_tasks:
   - name: install python 3
-    raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+    raw: test -e /usr/bin/python || (apt -y update && apt install -y python2-minimal)
   - name: Run setup again for gather facts
     setup:
   - name: Fix hash mismatch error
