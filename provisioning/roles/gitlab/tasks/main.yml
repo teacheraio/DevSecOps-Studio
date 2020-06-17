@@ -19,6 +19,7 @@
       - postfix
       - curl
       - openssl
+      - gnupg2
     state: present
 
 - name: Download GitLab repository installation script.
