@@ -1,6 +1,6 @@
 ---
 - name: Ensure Pip is installed.
-  package: name=python-pip state=present
+  package: name=python3-pip state=present
 
 - name: Ensure pip_install_packages are installed.
   pip:
