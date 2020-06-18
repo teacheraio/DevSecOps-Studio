@@ -2,7 +2,7 @@
 # # vi: set ft=ruby :
 
 # Vagrant version and Vagrant API version requirements
-Vagrant.require_version ">= 2.2.7"
+Vagrant.require_version ">= 2.2.9"
 VAGRANTFILE_API_VERSION = "2"
 
 # YAML module for reading box configurations.
@@ -50,6 +50,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       end # end of vb provider
     end # end of box
   end # end of machines loop
+
+  # Enable provider gui
+  #config.vm.provider :virtualbox do |vb|
+  #  vb.gui = true
+  #end
 
   config.vm.provision "shell", inline: <<-SHELL
     export DEBIAN_FRONTEND=noninteractive

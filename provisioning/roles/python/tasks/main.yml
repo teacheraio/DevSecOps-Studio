@@ -5,7 +5,7 @@
     name:
       - build-essential
       - git
-      - python-pip
+      - python3-pip
       - python-virtualenv
     update_cache: yes
     state: present
