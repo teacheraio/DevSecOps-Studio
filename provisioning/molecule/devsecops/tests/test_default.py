@@ -22,7 +22,7 @@ def test_hosts_file(host):
   '/home/vagrant/ascdso-studio',
   '/home/vagrant/linux-baseline',
   '/home/vagrant/cis-docker-benchmark',
-  '/etc/docker/certs.d/ascdso-gitlab.local:4567',
+  '/etc/docker/certs.d/ascdso.gitlab.local:4567',
 ])
 def test_directory_is_present(host, directory):
     dir = host.file(directory)

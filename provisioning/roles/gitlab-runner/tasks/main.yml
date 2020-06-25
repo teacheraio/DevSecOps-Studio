@@ -70,15 +70,15 @@
   delay: 5
   when: gitlab_runner_connect_enable == true
 
-- name: Check whether /etc/hosts contains "10.0.1.12 ascdso-gitlab.local"
-  command: awk /ascdso-gitlab.local$/ /etc/hosts
+- name: Check whether /etc/hosts contains "10.0.1.12 ascdso.gitlab.local"
+  command: awk /ascdso.gitlab.local$/ /etc/hosts
   register: hosts_content
   changed_when: False
 
   # https://gitlab.com/gitlab-org/gitlab-runner/issues/1490
-- name: Add ascdso-gitlab.local ip address into /etc/hosts
-  shell: echo "10.0.1.12 ascdso-gitlab.local" >> /etc/hosts
-  when: not (hosts_content.stdout is match("10.0.1.12 ascdso-gitlab.local"))
+- name: Add ascdso.gitlab.local ip address into /etc/hosts
+  shell: echo "10.0.1.12 ascdso.gitlab.local" >> /etc/hosts
+  when: not (hosts_content.stdout is match("10.0.1.12 ascdso.gitlab.local"))
 
 - name: Register GitLab Runner
   include_tasks: register-runner.yml

@@ -66,8 +66,8 @@
 
 - name: Copy self-signed public certificate.
   copy:
-    src: ascdso-gitlab.local.crt
-    dest: /etc/gitlab/ssl/ascdso-gitlab.local.crt
+    src: ascdso.gitlab.local.crt
+    dest: /etc/gitlab/ssl/ascdso.gitlab.local.crt
     owner: root
     group: root
     mode: 0644
@@ -75,8 +75,8 @@
 
 - name: Copy self-signed certificate private key.
   copy:
-    src: ascdso-gitlab.local.key
-    dest: /etc/gitlab/ssl/ascdso-gitlab.local.key
+    src: ascdso.gitlab.local.key
+    dest: /etc/gitlab/ssl/ascdso.gitlab.local.key
     owner: root
     group: root
     mode: 0644

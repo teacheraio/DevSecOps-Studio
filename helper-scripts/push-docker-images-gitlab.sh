@@ -1,5 +1,5 @@
 #!/bin/bash
-# docker login ascdso-gitlab.local:4567
+# docker login ascdso.gitlab.local:4567
 set -xe
 
 declare -a images=("consul"

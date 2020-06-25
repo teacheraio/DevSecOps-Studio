@@ -2,10 +2,10 @@
 dependency:
   name: galaxy
 driver:
-  name: docker 
+  name: docker
 lint:
   name: yamllint
-  enabled: False 
+  enabled: False
   options:
     config-file: resources/.yamllint
 platforms:
@@ -16,7 +16,7 @@ platforms:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
     pre_build_image: true
-    hostname: "ascdso-gitlab.local"
+    hostname: "ascdso.gitlab.local"
 provisioner:
   name: ansible
   playbooks:
@@ -31,7 +31,7 @@ provisioner:
       exclude:
         - roles/rvm.ruby/tasks/rvm.yml
 scenario:
-  name: gitlab 
+  name: gitlab
 verifier:
   name: testinfra
   lint:

@@ -37,8 +37,8 @@ def test_hosts_file(host):
 @pytest.mark.parametrize('file', [
   '/etc/hosts',
   '/etc/gitlab/gitlab.rb',
-  '/etc/gitlab/ssl/ascdso-gitlab.local.crt',
-  '/etc/gitlab/ssl/ascdso-gitlab.local.key',
+  '/etc/gitlab/ssl/ascdso.gitlab.local.crt',
+  '/etc/gitlab/ssl/ascdso.gitlab.local.key',
 ])
 def test_binary_is_present(host, file):
     file = host.file(file)

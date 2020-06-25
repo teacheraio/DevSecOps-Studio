@@ -3,8 +3,8 @@
 jenkins_process_user: jenkins
 jenkins_process_group: "{{ jenkins_process_user }}"
 
-docker_registry_hostname: ascdso-gitlab.local
+docker_registry_hostname: ascdso.gitlab.local
 docker_registry_port: 4567
 docker_registry_cert_path: "/etc/docker/certs.d/{{docker_registry_hostname}}:{{docker_registry_port}}/"
 
-gitlab_runner_coordinator_cert_path: 'ascdso-gitlab.local.crt'
+gitlab_runner_coordinator_cert_path: 'ascdso.gitlab.local.crt'

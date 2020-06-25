@@ -28,7 +28,7 @@ def test_hosts_file(host):
 
 @pytest.mark.parametrize('directory', [
   '/home/deploy_user/.ssh',
-  '/etc/docker/certs.d/ascdso-gitlab.local:4567',
+  '/etc/docker/certs.d/ascdso.gitlab.local:4567',
 ])
 def test_directory_is_present(host, directory):
     dir = host.file(directory)
@@ -42,7 +42,7 @@ def test_directory_is_present(host, directory):
   '/usr/local/bin/docker-compose',
   '/home/deploy_user/.ssh/id_rsa',
   '/home/deploy_user/.ssh/authorized_keys',
-  '/etc/docker/certs.d/ascdso-gitlab.local:4567/ca.crt'
+  '/etc/docker/certs.d/ascdso.gitlab.local:4567/ca.crt'
 ])
 def test_binary_is_present(host, file):
     file = host.file(file)

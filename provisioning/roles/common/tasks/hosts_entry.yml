@@ -8,11 +8,11 @@
       {{ item.ip }} {{ item.name }}
     marker: "# {mark} ANSIBLE MANAGED BLOCK {{ item.name }}"
   with_items:
-    - { ip: 10.0.1.66, name: ascdso-studio.local }
-    - { ip: 10.0.1.11, name: ascdso-jenkins.local }
-    - { ip: 10.0.1.12, name: ascdso-gitlab.local }
-    - { ip: 10.0.1.33, name: ascdso-gitlab-runner.local }
-    - { ip: 10.0.1.23, name: ascdso-elk-runner.local }
-    - { ip: 10.0.1.32, name: ascdso-ascdso-vuln-management.local }
-    - { ip: 10.0.1.33, name: ascdso-prod.local }
+    - { ip: 10.0.1.66, name: ascdso.studio.local }
+    - { ip: 10.0.1.11, name: ascdso.jenkins.local }
+    - { ip: 10.0.1.12, name: ascdso.gitlab.local }
+    - { ip: 10.0.1.33, name: ascdso.gitlab-runner.local }
+    - { ip: 10.0.1.23, name: ascdso.elk-runner.local }
+    - { ip: 10.0.1.32, name: ascdso.vuln-management.local }
+    - { ip: 10.0.1.33, name: ascdso.prod.local }
   when: add_host_entries

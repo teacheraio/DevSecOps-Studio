@@ -1,11 +1,11 @@
 ---
 
-docker_registry_hostname: ascdso-gitlab.local
+docker_registry_hostname: ascdso.gitlab.local
 docker_registry_port: 4567
 docker_registry_cert_path: "/etc/docker/certs.d/{{docker_registry_hostname}}:{{docker_registry_port}}/"
 
 # Deploy user configuration
 
 deploy_user_name: deploy_user
-deploy_user_ssh_dir: "/home/{{deploy_user_name}}/.ssh" 
+deploy_user_ssh_dir: "/home/{{deploy_user_name}}/.ssh"
 authorized_keys_file: "{{ deploy_user_ssh_dir }}/authorized_keys"
